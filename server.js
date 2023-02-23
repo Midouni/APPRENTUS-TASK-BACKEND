@@ -1,13 +1,14 @@
 require('dotenv').config()
 require('express-async-errors')
 const express = require('express')
+var cors = require('cors')
 const app = express()
 
 
 const { getAllExpensesDashboard } = require('./controllers/expenses')
 //router
 const expensesRouter = require('./routes/expenses')
-
+app.use(cors())
 app.use(express.json());
 app.use('/api/v1/expenses', expensesRouter)
 app.get('/api/v1/dashboard', getAllExpensesDashboard)
