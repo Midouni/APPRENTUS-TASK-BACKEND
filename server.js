@@ -23,7 +23,7 @@ app.use(notFoundMiddleware)
 
 
 
-//import function help for connect to database
+// import function help for connect to database
 const connectDB = require('./db/connect')
 
 const PORT = process.env.PORT || 5000
